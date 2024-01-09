@@ -19,7 +19,11 @@ class _RecommendedVideosState extends State<RecommendedVideos> {
       return ListView.builder(
         itemBuilder: (context, index) {
           Video video = videoService.getVideo(index);
-          return VideoTile(name: video.name);
+          return VideoTile(
+            name: video.name,
+            channelName: video.channelName,
+            views: video.views,
+          );
         },
         itemCount: videoService.videosCount,
       );
