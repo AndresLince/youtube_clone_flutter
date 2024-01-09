@@ -17,4 +17,8 @@ class VideoService extends ChangeNotifier{
       views: '2,3 k visualizaciones',
     ),
   ];
+
+  int get videosCount {
+    return _videos.length;
+  }
 }
