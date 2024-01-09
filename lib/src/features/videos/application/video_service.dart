@@ -21,4 +21,8 @@ class VideoService extends ChangeNotifier{
   int get videosCount {
     return _videos.length;
   }
+
+  Video getVideo(int index) {
+    return _videos[index];
+  }
 }
