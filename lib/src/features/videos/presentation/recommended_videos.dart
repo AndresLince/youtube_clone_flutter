@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:youtube_clone_flutter/src/features/videos/application/video_service.dart';
 
 class RecommendedVideos extends StatefulWidget {
   const RecommendedVideos({super.key});
@@ -10,8 +12,15 @@ class RecommendedVideos extends StatefulWidget {
 class _RecommendedVideosState extends State<RecommendedVideos> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text('RecommendedVideos')
-    );
+    return Consumer<VideoService>(builder: (context, videoService, child) {
+      return ListView.builder(
+        itemBuilder: (context, builder) {
+          return ListTile(
+            title: Text('Titulo video'),
+          );
+        },
+        itemCount: videoService.videosCount,
+      );
+    });
   }
 }
