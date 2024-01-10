@@ -23,6 +23,7 @@ class _RecommendedVideosState extends State<RecommendedVideos> {
             name: video.name,
             channelName: video.channelName,
             views: video.views,
+            channelImage: video.channelImage,
           );
         },
         itemCount: videoService.videosCount,
