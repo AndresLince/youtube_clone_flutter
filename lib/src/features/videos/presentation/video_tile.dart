@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:youtube_clone_flutter/src/features/videos/presentation/remote_video.dart';
 
 class VideoTile extends StatelessWidget {
   final String name;
@@ -14,14 +15,19 @@ class VideoTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      leading: CircleAvatar(
-        backgroundColor: Colors.white,
-        radius: 20,
-        backgroundImage: NetworkImage(this.channelImage),
-      ),
-      title: Text(name),
-      subtitle: Text('$channelName · $views'),
+    return Column(
+      children: [
+        RemoteVideo(),
+        ListTile(
+          leading: CircleAvatar(
+            backgroundColor: Colors.white,
+            radius: 20,
+            backgroundImage: NetworkImage(this.channelImage),
+          ),
+          title: Text(name),
+          subtitle: Text('$channelName · $views'),
+        ),
+      ]
     );
   }
 }
