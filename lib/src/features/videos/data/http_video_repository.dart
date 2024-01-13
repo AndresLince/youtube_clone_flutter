@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:http/http.dart' as http;
 import 'package:youtube_clone_flutter/src/features/videos/data/video_repository.dart';
 import 'package:youtube_clone_flutter/src/features/videos/domain/video.dart';
@@ -7,8 +9,18 @@ class HttpVideoRepository implements VideoRepository {
   final http.Client client;
 
   @override
-  Future<List<Video>> fetchVideos(String uid) {
-    // TODO: send request, parse response, return Weather object or throw error
-    throw UnimplementedError();
+  Future<List<Video>> fetchVideos(String uid) async {
+    final uri = Uri.parse('http://192.168.20.4:3000/video');
+    List<Video> _videos = [];
+    try{
+      http.Response response = await http.get(uri);
+      if (response.statusCode == 200) {
+        String data = response.body;
+        return jsonDecode(data);
+      }
+    }catch(ex) {
+      print(ex);
+    }
+    return _videos;
   }
 }
