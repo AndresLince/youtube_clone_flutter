@@ -5,11 +5,10 @@ import 'package:youtube_clone_flutter/src/features/videos/data/video_repository.
 import 'package:youtube_clone_flutter/src/features/videos/domain/video.dart';
 
 class HttpVideoRepository implements VideoRepository {
-  HttpVideoRepository({required this.client});
-  final http.Client client;
+  HttpVideoRepository();
 
   @override
-  Future<List<Video>> fetchVideos(String uid) async {
+  Future<List<Video>> fetchVideos() async {
     final uri = Uri.parse('http://192.168.20.4:3000/video');
     List<Video> _videos = [];
     try{
