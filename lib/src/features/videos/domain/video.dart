@@ -1,12 +1,18 @@
-class Video {
-  final String name;
-  final String channelName;
-  final String channelImage;
-  final String views;
-  Video({
-    required this.name,
-    required this.channelName,
-    required this.views,
-    required this.channelImage,
-  });
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+part 'video.freezed.dart';
+part 'video.g.dart';
+
+@freezed
+class Video with _$Video {
+  factory Video({
+    required String name,
+    required String channelName,
+    required String channelImage,
+    required String views,
+    required String videoUrl,
+  }) = _Video;
+
+  factory Video.fromJson(Map<String, dynamic> json) =>
+      _$VideoFromJson(json);
 }
