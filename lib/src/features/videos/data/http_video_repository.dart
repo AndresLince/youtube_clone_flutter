@@ -18,7 +18,7 @@ class HttpVideoRepository implements VideoRepository {
         return jsonDecode(data);
       }
     }catch(ex) {
-      print(ex);
+      throw Exception(ex);
     }
     return _videos;
   }
