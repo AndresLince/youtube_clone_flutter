@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:youtube_clone_flutter/src/features/videos/data/video_provider.dart';
-import 'package:youtube_clone_flutter/src/features/videos/presentation/video_tile.dart';
+import 'package:youtube_clone_flutter/src/features/videos/presentation/video_list.dart';
 import '../domain/video.dart';
 
 class RecommendedVideos extends ConsumerWidget {
@@ -20,18 +20,7 @@ class RecommendedVideos extends ConsumerWidget {
         /// handle both error and loading states. We can use pattern matching for this.
         /// We could alternatively use `if (activity.isLoading) { ... } else if (...)`
         child: switch (videos) {
-          AsyncData(:final value) => ListView.builder(
-            itemBuilder: (context, index) {
-              Video video = value[index];
-              return VideoTile(
-                name: video.name,
-                channelImage: video.channelImage,
-                views: video.views,
-                channelName: video.channelName,
-              );
-            },
-            itemCount: value.length,
-          ),
+          AsyncData(:final value) => VideoList(videos: value),
           AsyncError() => const Text('Oops, something unexpected happened'),
           _ => const CircularProgressIndicator(),
         },
