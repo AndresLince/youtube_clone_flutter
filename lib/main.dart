@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:youtube_clone_flutter/src/config/constants/environment.dart';
 import 'package:youtube_clone_flutter/src/features/videos/presentation/recommended_videos.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:youtube_clone_flutter/src/routing/router.dart';
 
-void main() {
+Future main() async {
+  await Environment.initEnvironment();
+
   runApp(const ProviderScope( child: MyApp()));
 }
 
