@@ -9,12 +9,14 @@ class VideoService extends ChangeNotifier{
       channelName: 'Fernando Herrera',
       channelImage: 'https://yt3.ggpht.com/ytc/AIf8zZRUdgAqLyjIRxhCGaw_4Ln_awajey3DphahM-pQsg=s48-c-k-c0x00ffffff-no-rj',
       views: '2,1 k visualizaciones',
+      videoUrl: ''
     ),
     Video(
       name: 'DevTalles PodCast - 146: Fin del 2023 | Comparativa contra ti mismo',
       channelName: 'Fernando Herrera',
       channelImage: 'https://yt3.ggpht.com/ytc/AIf8zZRUdgAqLyjIRxhCGaw_4Ln_awajey3DphahM-pQsg=s48-c-k-c0x00ffffff-no-rj',
       views: '2,3 k visualizaciones',
+      videoUrl: ''
     ),
   ];
 
