@@ -13,7 +13,7 @@ class VideoTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onLongPress: () => context.go('/video/1'),
+      onLongPress: () => context.go('/video/${video.id}'),
       child: Column(
         children: [
           RemoteVideo(url: video.videoUrl),
