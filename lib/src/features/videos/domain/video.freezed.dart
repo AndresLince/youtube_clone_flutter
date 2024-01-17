@@ -25,6 +25,7 @@ mixin _$Video {
   String get channelImage => throw _privateConstructorUsedError;
   String get views => throw _privateConstructorUsedError;
   String get videoUrl => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -41,7 +42,8 @@ abstract class $VideoCopyWith<$Res> {
       String channelName,
       String channelImage,
       String views,
-      String videoUrl});
+      String videoUrl,
+      String id});
 }
 
 /// @nodoc
@@ -62,6 +64,7 @@ class _$VideoCopyWithImpl<$Res, $Val extends Video>
     Object? channelImage = null,
     Object? views = null,
     Object? videoUrl = null,
+    Object? id = null,
   }) {
     return _then(_value.copyWith(
       name: null == name
@@ -84,6 +87,10 @@ class _$VideoCopyWithImpl<$Res, $Val extends Video>
           ? _value.videoUrl
           : videoUrl // ignore: cast_nullable_to_non_nullable
               as String,
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -100,7 +107,8 @@ abstract class _$$VideoImplCopyWith<$Res> implements $VideoCopyWith<$Res> {
       String channelName,
       String channelImage,
       String views,
-      String videoUrl});
+      String videoUrl,
+      String id});
 }
 
 /// @nodoc
@@ -119,6 +127,7 @@ class __$$VideoImplCopyWithImpl<$Res>
     Object? channelImage = null,
     Object? views = null,
     Object? videoUrl = null,
+    Object? id = null,
   }) {
     return _then(_$VideoImpl(
       name: null == name
@@ -141,6 +150,10 @@ class __$$VideoImplCopyWithImpl<$Res>
           ? _value.videoUrl
           : videoUrl // ignore: cast_nullable_to_non_nullable
               as String,
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -153,7 +166,8 @@ class _$VideoImpl implements _Video {
       required this.channelName,
       required this.channelImage,
       required this.views,
-      required this.videoUrl});
+      required this.videoUrl,
+      required this.id});
 
   factory _$VideoImpl.fromJson(Map<String, dynamic> json) =>
       _$$VideoImplFromJson(json);
@@ -168,10 +182,12 @@ class _$VideoImpl implements _Video {
   final String views;
   @override
   final String videoUrl;
+  @override
+  final String id;
 
   @override
   String toString() {
-    return 'Video(name: $name, channelName: $channelName, channelImage: $channelImage, views: $views, videoUrl: $videoUrl)';
+    return 'Video(name: $name, channelName: $channelName, channelImage: $channelImage, views: $views, videoUrl: $videoUrl, id: $id)';
   }
 
   @override
@@ -186,13 +202,14 @@ class _$VideoImpl implements _Video {
                 other.channelImage == channelImage) &&
             (identical(other.views, views) || other.views == views) &&
             (identical(other.videoUrl, videoUrl) ||
-                other.videoUrl == videoUrl));
+                other.videoUrl == videoUrl) &&
+            (identical(other.id, id) || other.id == id));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, name, channelName, channelImage, views, videoUrl);
+      runtimeType, name, channelName, channelImage, views, videoUrl, id);
 
   @JsonKey(ignore: true)
   @override
@@ -214,7 +231,8 @@ abstract class _Video implements Video {
       required final String channelName,
       required final String channelImage,
       required final String views,
-      required final String videoUrl}) = _$VideoImpl;
+      required final String videoUrl,
+      required final String id}) = _$VideoImpl;
 
   factory _Video.fromJson(Map<String, dynamic> json) = _$VideoImpl.fromJson;
 
@@ -228,6 +246,8 @@ abstract class _Video implements Video {
   String get views;
   @override
   String get videoUrl;
+  @override
+  String get id;
   @override
   @JsonKey(ignore: true)
   _$$VideoImplCopyWith<_$VideoImpl> get copyWith =>

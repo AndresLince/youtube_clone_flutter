@@ -6,7 +6,7 @@ part of 'video_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$videoHash() => r'49598cd1f631398f36f367985055f2eabc9052b2';
+String _$videoHash() => r'a199b567a5701457294b2694ac882945d507ceba';
 
 /// This will create a provider named `videoProvider`
 /// which will cache the result of this function.
