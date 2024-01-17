@@ -13,10 +13,7 @@ class VideoList extends StatelessWidget {
       itemBuilder: (context, index) {
         Video video = videos[index];
         return VideoTile(
-          name: video.name,
-          channelImage: video.channelImage,
-          views: video.views,
-          channelName: video.channelName,
+          video: video,
         );
       },
       itemCount: videos.length,
