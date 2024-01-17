@@ -3,7 +3,8 @@ import 'package:video_player/video_player.dart';
 import 'dart:async';
 
 class RemoteVideo extends StatefulWidget {
-  const RemoteVideo({super.key});
+  final String url;
+  const RemoteVideo({super.key, required this.url});
 
   @override
   State<RemoteVideo> createState() => _VideoPlayerScreenState();
@@ -22,7 +23,7 @@ class _VideoPlayerScreenState extends State<RemoteVideo> {
     // or the internet.
     _controller = VideoPlayerController.networkUrl(
       Uri.parse(
-        'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
+        widget.url,
       ),
     );
 
