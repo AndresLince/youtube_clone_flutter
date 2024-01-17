@@ -2,16 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:youtube_clone_flutter/src/features/videos/presentation/remote_video.dart';
 
+import '../domain/video.dart';
+
 class VideoTile extends StatelessWidget {
-  final String name;
-  final String channelName;
-  final String views;
-  final String channelImage;
+  final Video video;
   VideoTile({
-    required this.name,
-    required this.channelName,
-    required this.views,
-    required this.channelImage,
+    required this.video,
   });
 
   @override
@@ -20,15 +16,15 @@ class VideoTile extends StatelessWidget {
       onLongPress: () => context.go('/video/1'),
       child: Column(
         children: [
-          RemoteVideo(),
+          RemoteVideo(url: video.videoUrl),
           ListTile(
             leading: CircleAvatar(
               backgroundColor: Colors.white,
               radius: 20,
-              backgroundImage: NetworkImage(this.channelImage),
+              backgroundImage: NetworkImage(this.video.channelImage),
             ),
-            title: Text(name),
-            subtitle: Text('$channelName · $views'),
+            title: Text(video.name),
+            subtitle: Text('${video.channelName} · ${video.views}'),
           ),
         ]
       ),
