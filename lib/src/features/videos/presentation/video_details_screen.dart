@@ -16,7 +16,11 @@ class _VideoDetailsScreenState extends ConsumerState<VideoDetailsScreen> {
     return Scaffold(
       body: Column(
         children: [
-          RemoteVideo(url: 'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4')
+          RemoteVideo(url: 'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4'),
+          ListTile(
+            title: Text('DevTalles PodCast - 147: Inicio 2024 | ¿Cómo hacer que te pasen cosas buenas?'),
+            subtitle: Text('505 k vistas hace 2 días Raquel de la morena'),
+          ),
         ],
       ),
     );
