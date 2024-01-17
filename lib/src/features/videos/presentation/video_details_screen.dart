@@ -16,7 +16,7 @@ class _VideoDetailsScreenState extends ConsumerState<VideoDetailsScreen> {
     return Scaffold(
       body: Column(
         children: [
-          RemoteVideo()
+          RemoteVideo(url: 'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4')
         ],
       ),
     );
