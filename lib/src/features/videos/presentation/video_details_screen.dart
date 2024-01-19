@@ -19,7 +19,15 @@ class _VideoDetailsScreenState extends ConsumerState<VideoDetailsScreen> {
           RemoteVideo(url: 'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4'),
           ListTile(
             title: Text('DevTalles PodCast - 147: Inicio 2024 | ¿Cómo hacer que te pasen cosas buenas?'),
-            subtitle: Text('505 k vistas hace 2 días Raquel de la morena'),
+            subtitle: Text('505 k vistas hace 2 días Fernando herrera'),
+          ),
+          ListTile(
+            leading: CircleAvatar(
+              backgroundColor: Colors.white,
+              radius: 20,
+              backgroundImage: NetworkImage('https://yt3.ggpht.com/ytc/AIf8zZRUdgAqLyjIRxhCGaw_4Ln_awajey3DphahM-pQsg=s48-c-k-c0x00ffffff-no-rj'),
+            ),
+            title: Text('Fernando herrera'),
           ),
         ],
       ),
